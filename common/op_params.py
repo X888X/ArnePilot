@@ -91,13 +91,13 @@ class opParams:
                         #'global_df_mod': Param(None, VT.none_or_number, 'The multiplier for the current distance used by dynamic follow. The range is limited from 0.85 to 1.2\n'
                                                                         #'Smaller values will get you closer, larger will get you farther\n'
                                                                         #'This is multiplied by any profile that\'s active. Set to None to disable', live=True),
-                        #'hide_auto_df_alerts': Param(True, bool, 'Hides the alert that shows what profile the model has chosen'),
+                        'hide_auto_df_alerts': Param(False, bool, 'Hides the alert that shows what profile the model has chosen'),
                         'hotspot_on_boot': Param(True, bool, 'Enable Hotspot On Boot'),
                         'keep_openpilot_engaged': Param(True, bool, 'True is stock behavior in this fork. False lets you use the brake and cruise control stalk to disengage as usual'),
                         #'lat_d': Param(9.0, VT.number, 'The lateral derivative gain, default is 9.0 for TSS2 Corolla. This is active at all speeds', live=True),
                         'limit_rsa': Param(False, bool, "Switch off RSA above rsa_max_speed"),
                         'interbridged': Param(False, bool, "ONLY USE IT FOR TESTING PURPOSE. You are responsible for your own action. we do not recommend using it if you don't know what youre doing"),
-                        #'ludicrous_mode': Param(False, bool, 'Double overall acceleration!'),
+                        'ludicrous_mode': Param(False, bool, 'Double overall acceleration!'),
                         'mpc_offset': Param(0.0, VT.number, 'Offset model braking by how many m/s. Lower numbers equals more model braking', live=True),
                         'NoctuaMode': Param(True, bool, 'Noctua Fan are super quite and they run at full speed at all time.'),
                         'offset_limit': Param(0, VT.number, 'Speed at which apk percent offset will work in m/s'),
@@ -116,10 +116,9 @@ class opParams:
                         'speed_signs_in_mph': Param(False, bool, 'Display rsa speed in mph'),
                         #'steer_actuator_delay': Param(0.5, VT.number, 'The steer actuator delay', live=True),
                         #'steer_up_15': Param(False, bool, 'Increase rate of steering up to 15, may fault on some cars'),
-                        #'traffic_light_alerts': Param(False, bool, "Switch off the traffic light alerts"),
+                        'traffic_light_alerts': Param(True, bool, "Switch off the traffic light alerts"),
                         'traffic_lights': Param(True, bool, "Should Openpilot stop for traffic lights"),
                         'traffic_lights_without_direction': Param(False, bool, "Should Openpilot stop for traffic lights without a direction specified"),
-                        #'use_car_caching': Param(True, bool, 'Whether to use fingerprint caching'),
                         #'min_TR': Param(None, VT.none_or_number, 'The minimum allowed following distance in seconds. Default is 0.9 seconds.\n'
                                                                  #'The range is limited from 0.85 to 1.3. Set to None to disable', live=True),
                         'use_car_caching': Param(True, bool, 'Cache car fingerprint if panda not disconnected.'),
