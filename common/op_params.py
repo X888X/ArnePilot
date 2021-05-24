@@ -72,40 +72,40 @@ class opParams:
 
     VT = ValueTypes()
     self.fork_params = {'awareness_factor': Param(6., VT.number, 'Multiplier for the awareness times'),
-                        #'alca_min_speed': Param(20, VT.number, 'Speed limit to start ALC in MPH'),
-                        #'alca_nudge_required': Param(False, bool, "Require nudge to start ALC"),
-                        #'autoUpdate': Param(True, bool, 'Whether to auto-update'),
-                        #'camera_offset': Param(0.06, VT.number, 'Your camera offset to use in lane_planner.py', live=True),
+                        'alca_min_speed': Param(20, VT.number, 'Speed limit to start ALC in MPH'),
+                        'alca_nudge_required': Param(False, bool, "Require nudge to start ALC"),
+                        'autoUpdate': Param(False, bool, 'Whether to auto-update'),
+                        'camera_offset': Param(0.06, VT.number, 'Your camera offset to use in lane_planner.py', live=True),
                         'curvature_factor': Param(1.4, VT.number, 'Multiplier for the curvature slowdown. Increase for less braking.'),
                         'cloak': Param(True, bool, "make comma believe you are on their fork"),
-                        #'corolla_tss2_d_tuning': Param(False, bool, 'lateral tuning using PID w/ true derivative'),
+                        'corolla_tss2_d_tuning': Param(False, bool, 'lateral tuning using PID w/ true derivative'),
                         'default_brake_distance': Param(250.0, VT.number, 'Distance in m to start braking for mapped speeds.'),
                         'distance_traveled': Param(False, bool, 'Whether to log distance_traveled or not.'),
-                        #'enable_long_derivative': Param(False, bool, 'If you have longitudinal overshooting, enable this! This enables derivative-based\n'
-                                                                    # 'integral wind-down to help reduce overshooting within the long PID loop'),
-                        #'dynamic_follow': Param('normal', str, "Can be: ('close', 'normal', 'far'): Left to right increases in following distance.\n"
-                                                               #"All profiles support dynamic follow so you'll get your preferred distance while\n"
-                                                               #"retaining the smoothness and safety of dynamic follow!", live=True),
-                        #'eco_mode': Param(False, bool, "Default to eco instead of normal."),
-                        #'force_pedal': Param(False, bool, "If openpilot isn't recognizing your comma pedal, set this to True"),
-                        #'global_df_mod': Param(None, VT.none_or_number, 'The multiplier for the current distance used by dynamic follow. The range is limited from 0.85 to 1.2\n'
-                                                                        #'Smaller values will get you closer, larger will get you farther\n'
-                                                                        #'This is multiplied by any profile that\'s active. Set to None to disable', live=True),
-                        #'hide_auto_df_alerts': Param(True, bool, 'Hides the alert that shows what profile the model has chosen'),
-                        #'hotspot_on_boot': Param(False, bool, 'Enable Hotspot On Boot'),
+                        'enable_long_derivative': Param(False, bool, 'If you have longitudinal overshooting, enable this! This enables derivative-based\n'
+                                                                     'integral wind-down to help reduce overshooting within the long PID loop'),
+                        'dynamic_follow': Param('normal', str, "Can be: ('close', 'normal', 'far'): Left to right increases in following distance.\n"
+                                                               "All profiles support dynamic follow so you'll get your preferred distance while\n"
+                                                               "retaining the smoothness and safety of dynamic follow!", live=True),
+                        'eco_mode': Param(False, bool, "Default to eco instead of normal."),
+                        'force_pedal': Param(False, bool, "If openpilot isn't recognizing your comma pedal, set this to True"),
+                        'global_df_mod': Param(None, VT.none_or_number, 'The multiplier for the current distance used by dynamic follow. The range is limited from 0.85 to 1.2\n'
+                                                                        'Smaller values will get you closer, larger will get you farther\n'
+                                                                        'This is multiplied by any profile that\'s active. Set to None to disable', live=True),
+                        'hide_auto_df_alerts': Param(False, bool, 'Hides the alert that shows what profile the model has chosen'),
+                        'hotspot_on_boot': Param(True, bool, 'Enable Hotspot On Boot'),
                         'keep_openpilot_engaged': Param(True, bool, 'True is stock behavior in this fork. False lets you use the brake and cruise control stalk to disengage as usual'),
-                        #'lat_d': Param(9.0, VT.number, 'The lateral derivative gain, default is 9.0 for TSS2 Corolla. This is active at all speeds', live=True),
+                        'lat_d': Param(9.0, VT.number, 'The lateral derivative gain, default is 9.0 for TSS2 Corolla. This is active at all speeds', live=True),
                         'limit_rsa': Param(False, bool, "Switch off RSA above rsa_max_speed"),
                         'interbridged': Param(False, bool, "ONLY USE IT FOR TESTING PURPOSE. You are responsible for your own action. we do not recommend using it if you don't know what youre doing"),
-                        #'ludicrous_mode': Param(False, bool, 'Double overall acceleration!'),
+                        'ludicrous_mode': Param(False, bool, 'Double overall acceleration!'),
                         'mpc_offset': Param(0.0, VT.number, 'Offset model braking by how many m/s. Lower numbers equals more model braking', live=True),
-                        #'NoctuaMode': Param(False, bool, 'Noctua Fan are super quite and they run at full speed at all time.'),
+                        'NoctuaMode': Param(True, bool, 'Noctua Fan are super quite and they run at full speed at all time.'),
                         'offset_limit': Param(0, VT.number, 'Speed at which apk percent offset will work in m/s'),
                         'osm': Param(True, bool, 'Whether to use OSM for drives'),
                         'prius_pid': Param(False, bool, 'This enables the PID lateral controller with new a experimental derivative tune\nFalse: stock INDI, True: TSS2-tuned PID'),
-                        'physical_buttons_AP': Param(False, bool, 'This enables the physical buttons to control sport and eco, some cars do not have buttons'),
-                        'physical_buttons_DF': Param(False, bool, 'This enables the physical buttons to control following distance, TSS1 works with new SDSU FW'),
-                        'physical_buttons_LKAS': Param(False, bool, 'This enables the physical buttons to control LKAS. TSS1 only this may break if used on TSS2 vechicle'),
+                        'physical_buttons_AP': Param(True, bool, 'This enables the physical buttons to control sport and eco, some cars do not have buttons'),
+                        'physical_buttons_DF': Param(True, bool, 'This enables the physical buttons to control following distance, TSS1 works with new SDSU FW'),
+                        'physical_buttons_LKAS': Param(True, bool, 'This enables the physical buttons to control LKAS. TSS1 only this may break if used on TSS2 vechicle'),
                         'rolling_stop': Param(False, bool, 'If you do not want stop signs to go down to 0 kph enable this for 9kph slow down'),
                         'rsa_max_speed': Param(24.5, VT.number, 'Speed limit to ignore RSA in m/s'),
                         'set_speed_offset': Param(True, bool, 'Whether to use Set Speed offset from release4, enables low set speed and jump by 5 kph. False is on'),
@@ -114,13 +114,13 @@ class opParams:
                         'spairrowtuning': Param(False, bool, 'INDI Tuning for Corolla Tss2'),
                         'speed_offset': Param(0, VT.number, 'Speed limit offset in m/s', live=True),
                         'speed_signs_in_mph': Param(True, bool, 'Display rsa speed in mph'),
-                        #'steer_actuator_delay': Param(0.5, VT.number, 'The steer actuator delay', live=True),
-                        #'steer_up_15': Param(False, bool, 'Increase rate of steering up to 15, may fault on some cars'),
-                        #'traffic_light_alerts': Param(False, bool, "Switch off the traffic light alerts"),
+                        'steer_actuator_delay': Param(0.5, VT.number, 'The steer actuator delay', live=True),
+                        'steer_up_15': Param(False, bool, 'Increase rate of steering up to 15, may fault on some cars'),
+                        'traffic_light_alerts': Param(True, bool, "Switch off the traffic light alerts"),
                         'traffic_lights': Param(False, bool, "Should Openpilot stop for traffic lights"),
                         'traffic_lights_without_direction': Param(False, bool, "Should Openpilot stop for traffic lights without a direction specified"),
-                        #'use_car_caching': Param(True, bool, 'Whether to use fingerprint caching'),
-                        #'min_TR': Param(None, VT.none_or_number, 'The minimum allowed following distance in seconds. Default is 0.9 seconds.\n'
+                        'use_car_caching': Param(True, bool, 'Whether to use fingerprint caching'),
+                        'min_TR': Param(None, VT.none_or_number, 'The minimum allowed following distance in seconds. Default is 0.9 seconds.\n'
                                                                  #'The range is limited from 0.85 to 1.3. Set to None to disable', live=True),
                         'use_car_caching': Param(True, bool, 'Cache car fingerprint if panda not disconnected.'),
                         'use_virtual_middle_line': Param(False, bool, 'For roads over 4m wide, hug right. For roads under 2m wide, hug left. European requirement.'),
