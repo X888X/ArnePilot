@@ -80,7 +80,7 @@ class opParams:
                         'cloak': Param(True, bool, "make comma believe you are on their fork"),
                         #'corolla_tss2_d_tuning': Param(False, bool, 'lateral tuning using PID w/ true derivative'),
                         'default_brake_distance': Param(250.0, VT.number, 'Distance in m to start braking for mapped speeds.'),
-                        'distance_traveled': Param(False, bool, 'Whether to log distance_traveled or not.'),
+                        'distance_traveled': Param(True, bool, 'Whether to log distance_traveled or not.'),
                         #'enable_long_derivative': Param(False, bool, 'If you have longitudinal overshooting, enable this! This enables derivative-based\n'
                                                                     # 'integral wind-down to help reduce overshooting within the long PID loop'),
                         #'dynamic_follow': Param('normal', str, "Can be: ('close', 'normal', 'far'): Left to right increases in following distance.\n"
@@ -103,21 +103,21 @@ class opParams:
                         'offset_limit': Param(0, VT.number, 'Speed at which apk percent offset will work in m/s'),
                         'osm': Param(True, bool, 'Whether to use OSM for drives'),
                         'prius_pid': Param(False, bool, 'This enables the PID lateral controller with new a experimental derivative tune\nFalse: stock INDI, True: TSS2-tuned PID'),
-                        'physical_buttons_AP': Param(False, bool, 'This enables the physical buttons to control sport and eco, some cars do not have buttons'),
-                        'physical_buttons_DF': Param(False, bool, 'This enables the physical buttons to control following distance, TSS1 works with new SDSU FW'),
-                        'physical_buttons_LKAS': Param(False, bool, 'This enables the physical buttons to control LKAS. TSS1 only this may break if used on TSS2 vechicle'),
+                        'physical_buttons_AP': Param(True, bool, 'This enables the physical buttons to control sport and eco, some cars do not have buttons'),
+                        'physical_buttons_DF': Param(True, bool, 'This enables the physical buttons to control following distance, TSS1 works with new SDSU FW'),
+                        'physical_buttons_LKAS': Param(True, bool, 'This enables the physical buttons to control LKAS. TSS1 only this may break if used on TSS2 vechicle'),
                         'rolling_stop': Param(False, bool, 'If you do not want stop signs to go down to 0 kph enable this for 9kph slow down'),
-                        'rsa_max_speed': Param(24.5, VT.number, 'Speed limit to ignore RSA in m/s'),
+                        'rsa_max_speed': Param(20, VT.number, 'Speed limit to ignore RSA in m/s'),
                         'set_speed_offset': Param(True, bool, 'Whether to use Set Speed offset from release4, enables low set speed and jump by 5 kph. False is on'),
                         'smart_speed': Param(True, bool, 'Whether to use Smart Speed for drives above smart_speed_max_vego'),
-                        'smart_speed_max_vego': Param(26.8, VT.number, 'Speed limit to ignore Smartspeed in m/s'),
+                        'smart_speed_max_vego': Param(25, VT.number, 'Speed limit to ignore Smartspeed in m/s'),
                         'spairrowtuning': Param(False, bool, 'INDI Tuning for Corolla Tss2'),
                         'speed_offset': Param(0, VT.number, 'Speed limit offset in m/s', live=True),
-                        'speed_signs_in_mph': Param(True, bool, 'Display rsa speed in mph'),
+                        'speed_signs_in_mph': Param(False, bool, 'Display rsa speed in mph'),
                         #'steer_actuator_delay': Param(0.5, VT.number, 'The steer actuator delay', live=True),
                         #'steer_up_15': Param(False, bool, 'Increase rate of steering up to 15, may fault on some cars'),
                         #'traffic_light_alerts': Param(False, bool, "Switch off the traffic light alerts"),
-                        'traffic_lights': Param(False, bool, "Should Openpilot stop for traffic lights"),
+                        'traffic_lights': Param(True, bool, "Should Openpilot stop for traffic lights"),
                         'traffic_lights_without_direction': Param(False, bool, "Should Openpilot stop for traffic lights without a direction specified"),
                         #'use_car_caching': Param(True, bool, 'Whether to use fingerprint caching'),
                         #'min_TR': Param(None, VT.none_or_number, 'The minimum allowed following distance in seconds. Default is 0.9 seconds.\n'
@@ -125,7 +125,7 @@ class opParams:
                         'use_car_caching': Param(True, bool, 'Cache car fingerprint if panda not disconnected.'),
                         'use_virtual_middle_line': Param(False, bool, 'For roads over 4m wide, hug right. For roads under 2m wide, hug left. European requirement.'),
                         'uniqueID': Param(None, [type(None), str], 'User\'s unique ID'),
-                        'update_behavior': Param('auto', str, 'Can be: (\'off\', \'alert\', \'auto\') without quotes\n'
+                        'update_behavior': Param('alert', str, 'Can be: (\'off\', \'alert\', \'auto\') without quotes\n'
                                                               'off will never update, alert shows an alert on-screen\n'
                                                               'auto will reboot the device when an update is seen'),
                         'enable_indi_live': Param(False, bool, live=True),
