@@ -86,11 +86,11 @@ class opParams:
                         'dynamic_follow': Param('normal', str, "Can be: ('close', 'normal', 'far'): Left to right increases in following distance.\n"
                                                                "All profiles support dynamic follow so you'll get your preferred distance while\n"
                                                                "retaining the smoothness and safety of dynamic follow!", live=True),
-                        #'eco_mode': Param(False, bool, "Default to eco instead of normal."),
-                        #'force_pedal': Param(False, bool, "If openpilot isn't recognizing your comma pedal, set this to True"),
-                        #'global_df_mod': Param(None, VT.none_or_number, 'The multiplier for the current distance used by dynamic follow. The range is limited from 0.85 to 1.2\n'
-                                                                        #'Smaller values will get you closer, larger will get you farther\n'
-                                                                        #'This is multiplied by any profile that\'s active. Set to None to disable', live=True),
+                        'eco_mode': Param(False, bool, "Default to eco instead of normal."),
+                        'force_pedal': Param(False, bool, "If openpilot isn't recognizing your comma pedal, set this to True"),
+                        'global_df_mod': Param(None, VT.none_or_number, 'The multiplier for the current distance used by dynamic follow. The range is limited from 0.85 to 1.2\n'
+                                                                        'Smaller values will get you closer, larger will get you farther\n'
+                                                                        'This is multiplied by any profile that\'s active. Set to None to disable', live=True),
                         'hide_auto_df_alerts': Param(False, bool, 'Hides the alert that shows what profile the model has chosen'),
                         'hotspot_on_boot': Param(True, bool, 'Enable Hotspot On Boot'),
                         'keep_openpilot_engaged': Param(True, bool, 'True is stock behavior in this fork. False lets you use the brake and cruise control stalk to disengage as usual'),
