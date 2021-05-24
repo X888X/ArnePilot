@@ -82,7 +82,7 @@ class opParams:
                         'default_brake_distance': Param(250.0, VT.number, 'Distance in m to start braking for mapped speeds.'),
                         'distance_traveled': Param(True, bool, 'Whether to log distance_traveled or not.'),
                         'enable_long_derivative': Param(False, bool, 'If you have longitudinal overshooting, enable this! This enables derivative-based\n'
-                                                                    # 'integral wind-down to help reduce overshooting within the long PID loop'),
+                                                                     'integral wind-down to help reduce overshooting within the long PID loop'),
                         'dynamic_follow': Param('normal', str, "Can be: ('close', 'normal', 'far'): Left to right increases in following distance.\n"
                                                                "All profiles support dynamic follow so you'll get your preferred distance while\n"
                                                                "retaining the smoothness and safety of dynamic follow!", live=True),
@@ -120,7 +120,7 @@ class opParams:
                         'traffic_lights': Param(True, bool, "Should Openpilot stop for traffic lights"),
                         'traffic_lights_without_direction': Param(False, bool, "Should Openpilot stop for traffic lights without a direction specified"),
                         'min_TR': Param(None, VT.none_or_number, 'The minimum allowed following distance in seconds. Default is 0.9 seconds.\n'
-                                                                 #'The range is limited from 0.85 to 1.3. Set to None to disable', live=True),
+                                                                 'The range is limited from 0.85 to 1.3. Set to None to disable', live=True),
                         'use_car_caching': Param(True, bool, 'Cache car fingerprint if panda not disconnected.'),
                         'use_virtual_middle_line': Param(False, bool, 'For roads over 4m wide, hug right. For roads under 2m wide, hug left. European requirement.'),
                         'uniqueID': Param(None, [type(None), str], 'User\'s unique ID'),
