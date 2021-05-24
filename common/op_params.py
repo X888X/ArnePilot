@@ -78,10 +78,10 @@ class opParams:
                         'camera_offset': Param(0.06, VT.number, 'Your camera offset to use in lane_planner.py', live=True),
                         'curvature_factor': Param(1.4, VT.number, 'Multiplier for the curvature slowdown. Increase for less braking.'),
                         'cloak': Param(True, bool, "make comma believe you are on their fork"),
-                        #'corolla_tss2_d_tuning': Param(False, bool, 'lateral tuning using PID w/ true derivative'),
+                        'corolla_tss2_d_tuning': Param(False, bool, 'lateral tuning using PID w/ true derivative'),
                         'default_brake_distance': Param(250.0, VT.number, 'Distance in m to start braking for mapped speeds.'),
                         'distance_traveled': Param(True, bool, 'Whether to log distance_traveled or not.'),
-                        #'enable_long_derivative': Param(False, bool, 'If you have longitudinal overshooting, enable this! This enables derivative-based\n'
+                        'enable_long_derivative': Param(False, bool, 'If you have longitudinal overshooting, enable this! This enables derivative-based\n'
                                                                     # 'integral wind-down to help reduce overshooting within the long PID loop'),
                         'dynamic_follow': Param('normal', str, "Can be: ('close', 'normal', 'far'): Left to right increases in following distance.\n"
                                                                "All profiles support dynamic follow so you'll get your preferred distance while\n"
@@ -94,7 +94,7 @@ class opParams:
                         'hide_auto_df_alerts': Param(False, bool, 'Hides the alert that shows what profile the model has chosen'),
                         'hotspot_on_boot': Param(True, bool, 'Enable Hotspot On Boot'),
                         'keep_openpilot_engaged': Param(True, bool, 'True is stock behavior in this fork. False lets you use the brake and cruise control stalk to disengage as usual'),
-                        #'lat_d': Param(9.0, VT.number, 'The lateral derivative gain, default is 9.0 for TSS2 Corolla. This is active at all speeds', live=True),
+                        'lat_d': Param(9.0, VT.number, 'The lateral derivative gain, default is 9.0 for TSS2 Corolla. This is active at all speeds', live=True),
                         'limit_rsa': Param(False, bool, "Switch off RSA above rsa_max_speed"),
                         'interbridged': Param(False, bool, "ONLY USE IT FOR TESTING PURPOSE. You are responsible for your own action. we do not recommend using it if you don't know what youre doing"),
                         'ludicrous_mode': Param(False, bool, 'Double overall acceleration!'),
@@ -114,12 +114,12 @@ class opParams:
                         'spairrowtuning': Param(False, bool, 'INDI Tuning for Corolla Tss2'),
                         'speed_offset': Param(0, VT.number, 'Speed limit offset in m/s', live=True),
                         'speed_signs_in_mph': Param(False, bool, 'Display rsa speed in mph'),
-                        #'steer_actuator_delay': Param(0.5, VT.number, 'The steer actuator delay', live=True),
-                        #'steer_up_15': Param(False, bool, 'Increase rate of steering up to 15, may fault on some cars'),
+                        'steer_actuator_delay': Param(0.5, VT.number, 'The steer actuator delay', live=True),
+                        'steer_up_15': Param(False, bool, 'Increase rate of steering up to 15, may fault on some cars'),
                         'traffic_light_alerts': Param(True, bool, "Switch off the traffic light alerts"),
                         'traffic_lights': Param(True, bool, "Should Openpilot stop for traffic lights"),
                         'traffic_lights_without_direction': Param(False, bool, "Should Openpilot stop for traffic lights without a direction specified"),
-                        #'min_TR': Param(None, VT.none_or_number, 'The minimum allowed following distance in seconds. Default is 0.9 seconds.\n'
+                        'min_TR': Param(None, VT.none_or_number, 'The minimum allowed following distance in seconds. Default is 0.9 seconds.\n'
                                                                  #'The range is limited from 0.85 to 1.3. Set to None to disable', live=True),
                         'use_car_caching': Param(True, bool, 'Cache car fingerprint if panda not disconnected.'),
                         'use_virtual_middle_line': Param(False, bool, 'For roads over 4m wide, hug right. For roads under 2m wide, hug left. European requirement.'),
